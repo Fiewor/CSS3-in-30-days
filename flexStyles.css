@@ -1,0 +1,85 @@
+/*  */
+.layout1 main {
+    display: flex;
+    flex-direction: row;
+}
+
+.layout1 article {
+    flex: 1 58%;
+    /* "1" makes it take up the same amount of space as every other element in the container
+        58% specifies the space you want the element(article in this case) to take up */
+    margin-right: 2%;
+}
+
+.layout2 header{
+    display: flex;
+    flex-direction: row;
+}
+
+.layout2 header nav{
+    flex: 1;
+    margin-left: 2%;
+}
+
+.layout2 main {
+    display: flex;
+    flex-direction: row;
+}
+
+.layout2 article {
+    flex: 1 56%;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+/* also notice how the background retains the same height as the growing content and sibling elements in a neat responsive way*/
+
+.layout2 aside.sidenav, .layout2 aside.sidebar {
+    flex: 1 20%;
+}
+
+.layout3 header {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.layout3 header nav {
+    flex: 1;
+    margin-right: 2%;
+}
+
+.layout3 .articles {
+    flex: 1;
+    margin: 0 2%;
+}
+
+.layout3 .articles:first-child, .layout3.articles:first-child {
+    margin: 0;
+}
+
+/* RESPONSIVE FALLBACK */
+@media screen and ( max-width: 768px ) { /* max-width based on the pixel size/ratio of the average mobile device */
+    /* we're going to make the elements vertically stack when you get to this maximum width */
+    .layout1 main, 
+    .layout1 article,
+    .layout1 aside,
+    .layout2 header,
+    .layout2 header .logo,
+    .layout2 header nav,
+    .layout2 main,
+    .layout2 .article,
+    .layout2 aside.sidenav,
+    .layout2 aside.sidebar,
+    .layout3 main,
+    .layout3 .articles,
+    .layout3 .article,
+    .layout3 aside,
+    .layout3 header,
+    .layout3 header .logo,
+    .layout3 header nav
+    {
+        display: block;
+        margin: none;
+        width: 100%;
+        margin: 0 0 2%;
+    }
+}

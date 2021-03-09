@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="modalStyle.css">
+    <title>CSS-Only Modal Window</title>
+</head>
+<body>
+    <!-- this input, or rather it's state whether checked or unchecked is really what makes the modal window to appear or not -->
+    <input type="checkbox" name="" id="click" style="display: none;">
+    <label  for="click" class="button">
+        <a class="button-theme">Click to Launch Modal</a>
+    </label>
+    <!-- clicking on the button (actually the label it's parent) toggles the input -->
+
+    <div class="modal">
+        <div class="modal-content">
+            <h3>Heading Title</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.Cumque fuga,
+            molestias dicta deleniti eum blanditiis veniam rerum,aut placeat aperiam
+            natus error et. Tempora blanditiis delectus debitis accusamus, fuga error!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.Cumque fuga,
+            molestias dicta deleniti eum blanditiis veniam rerum,aut placeat aperiam
+            natus error et. Tempora blanditiis delectus debitis accusamus, fuga error!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.Cumque fuga,
+            molestias dicta deleniti eum blanditiis veniam rerum,aut placeat aperiam
+            natus error et. Tempora blanditiis delectus debitis accusamus, fuga error!
+            </p>
+            <label for="click" class="button">
+                <a class="button-theme">Close</a>
+            </label>
+        </div>
+    </div>
+
+    <div class="overlay"></div>
+</body>
+</html>

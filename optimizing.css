@@ -1,0 +1,60 @@
+/*
+
+1. Code Better
+    Do the work right the first time
+    Don't rely on optimization tools
+    Crap in, crap out
+
+    Use shallow selectors, instead of really long redundant selectors
+    e.g. by using ids, classes
+
+    Organize your code
+    - Find out where a good place for a piece of code is, instead of just throwing stuff into your stylesheet
+    - Tip: Put a table of content up in comments at the very top of your stylesheet if you have a
+    really bigand heavy CSS stylesheet
+    - Have a way that you in the future can re-visit your code or someone else can so that can
+    - see what the heck you were doing
+
+    Use shorthand where possible
+
+    Treat your CSS3 like it's art (because it's what makes the web look good)
+
+2. Validate your CSS
+    Because the smallest error can cause the biggest headaches
+    So, be smart and use free tools like www.cssportal.com/css-optimize/ to optimize
+    (maybe by compressing) your code
+
+
+3. Compress your CSS
+    You want your CSS to be highly readable, easy to navigate with your comments,
+    indentation, spacing, organisation, table of content, but live/production-ready sites like a 
+    live client site or we-app don't need all that
+    You can have a developer CSS file that is different from the one you use for the live site.
+    codekitapp.com - all-in-one compression, output, developer tool - basically very useful
+    for optimizing CSS
+    You can even automate this step and use it to easily have two versions of your CSS
+
+4. Preload CSS3 (in the browser)
+    You can improve performance and loading time of styles on your website by adding the following code:
+    <link rel="preload" href="app.css" as="style">
+    Using the REL attribute to tell the browser to preload this file as a stle
+    So, it would just check a little bit earliewr and load that style up so there's less wait time
+
+5. Lighten up your framework
+    Frameworks are notoriously heavy meaning that there a lot of files, functions, assets and code that you do not need in your website
+    When you downnload the framework, either remove eveything except what you plan on using
+    or just download specific files from the framework that you need, load it up on your website or aplication
+    Maybe, that would make the resources quicker to load
+
+6. Learn a preprocessor language e.g Sass or Less
+    They save coding time
+    Will give more flexibility when it comes to styling
+    You can export highly optimized images and create production-ready sites and apps
+    
+Some great optimization resources:
+    Shorthand properties - Mozilla
+    CSS Optimize
+    CodeKit
+    Sass
+
+*/

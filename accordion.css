@@ -1,0 +1,65 @@
+.accordion {
+    position: relative;
+    display: block;
+    background-color: white;
+    border: solid 1px #e0e0e0;
+    margin: 50% auto;
+    overflow: hidden;
+}
+
+.accordion_item {
+    display: block;
+}
+
+.accordion .accordion_content {
+    display: block;
+    padding: 0;
+    height: 0; /* we're hiding the element */
+    overflow: hidden; /* we're hiding any of the overflow e.g the text when it flows outside of it's height */
+    transition: height 0.5s ease, padding 0.3s linear;
+}
+
+.accordion .accordion_content p {
+    padding: 25px;
+    margin: 0;
+}
+
+.accordion .accordion_content:target { 
+/* styles this when the target(action) is performed
+    the div is the target of the clicking action of the a */
+    height: 150px;
+}
+
+.accordion .accordion_trigger {
+    text-decoration: none;
+}
+
+.accordion .accordion_title {
+    position: relative;
+    display: block;
+    margin: 0;
+    padding: 10px;
+    font-size: 1em;
+    background: #00b3b4;
+    color: white;
+    border: solid 1px #379aa4;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset,
+                0 -1px 0 rgba(255, 255, 255, 0.1) inset,
+                0 4px 0 #338a94, 0 4px 2px rgba(0,0,0,0.5);
+}
+
+    .accordion .accordion_title:hover {
+        background-color: #0bbfc0;
+    } 
+
+.accordion .accordion_title::after {
+    position: absolute;
+    content: "";
+    top: calc(50% - 4px);
+    right: 20px;
+    width: 7px;
+    height: 7px;
+    border-left: solid 2px white;
+    border-bottom: solid 2px white;
+    transform: rotate(-45deg);
+}

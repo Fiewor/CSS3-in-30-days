@@ -1,0 +1,49 @@
+body, html {
+    overflow-x: hidden;
+}
+
+.content {
+    width: 60%;
+    margin: 0 auto;
+    background: #f3f3d2;
+    padding: 10px 40px;
+    float: left;
+}
+ 
+.content:after {
+    display: table;
+    content: "";
+    clear: both;
+}
+
+.sidebar {
+    position: relative;
+    float: right;
+    box-sizing: border-box;
+    background: #efefee;
+    padding: 40px 60px;
+    box-shadow:0 12px 0 -4px #ecb43b;
+    border-radius: 3px;
+
+    position: fixed;
+    right: 5%;
+    width: 25%;
+    float: right;
+}
+
+.footer {
+    line-height: 50%;
+    background: #f3f3d2;
+    padding: 5px;
+    width: 100%;
+
+    position: fixed;
+    display: block;
+}
+
+@media screen and (device-width: 1000px) {
+    .content, .sidebar{
+        float: none;
+        position: none;
+    }
+}

@@ -1,0 +1,53 @@
+.overlay {
+    position: fixed;
+    /* top, left, bottom and right are set to 0 so it is connected to all four sides of the screen */
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 99; /*puts it in front of eveything else on the page*/
+    background: #000; 
+    pointer-events: none; /* so that the overlay can not be targeted or clicked */
+    opacity: 0;
+    -webkit-transform: scale(0.5); /* it's now half the size */
+            transform: scale(0.5);
+}
+
+input[type="checkbox"]:checked ~ .overlay {
+    pointer-events: auto;
+    opacity: 0.9;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+
+    -webkit-transition: transform 0.5s ease, opacity 0.5 ease;
+            transition: transform 0.5s ease, opacity 0.5 ease;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 100;
+    -webkit-transform: translate(-50%, -50%) scale(0.5);
+            transform: translate(-50%, -50%) scale(0.5);
+    width: 100%;
+    max-width: 640px;
+    pointer-events: none;
+    opacity: 0;
+}
+
+input[type="checkbox"]:checked ~ .modal {
+    pointer-events: auto;
+    opacity: 1;
+    -webkit-transform: translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -50%) scale(1);
+    -webkit-transition: transform 0.8s ease, opacity 0.8 ease;
+            transition: transform 0.8s ease, opacity 0.8 ease;
+    transition-delay: 0.1s;
+}
+
+.modal {
+    display: block;
+    padding: 30px;
+    background: #fff;
+}

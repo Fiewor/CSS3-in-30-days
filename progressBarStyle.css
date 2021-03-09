@@ -1,0 +1,143 @@
+section {
+    padding: 100px;
+    margin: 0 auto;
+}
+
+/* the styles for the bar i.e. the container */
+.animation-bar-1 {
+    position: relative;
+    display: block;
+    padding: 5px;
+    font-size: 16px;
+    line-height: 16px;
+    border-radius: 30px;
+    background: rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.8);
+}
+
+    /* the styles for the plain progress bar*/
+    .animation-bar-1 span {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    height: 20px;
+    border-radius: 10px 0 0 10px;
+    overflow: hidden; /* because we're going to have something going on within the inside of that */
+    background-color: #3577f3;
+    background-size: 100%;
+    background-image: linear-gradient(to bottom, #6157e7, #174bf8);
+    animation: progress-bar-1 6s infinite ease;
+}
+
+    /* the styles for the stripes of the progress bar */
+    .animation-bar-1 span::after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        content: "";
+        background-size: 100%;
+        background-image: linear-gradient(45deg, #fff 25%,
+                                         rgba(0,0,0,0) 25%,
+                                         rgba(0,0,0,0) 50%,
+                                         #fff 50%,
+                                         #fff 75%,
+                                         rgba(0,0,0,0) 75%,
+                                         rgba(0,0,0,0));
+        background-size: 30px 30px;
+        opacity: 0.3;
+        animation: progress-bar-after-1 0.5s infinite linear;
+    }
+
+/* the keyframes for the candy cane-like progress bar */
+/* this one is for the plain progress bar - makes it go to width of 60% and then ease back to width of 0 */
+@keyframes progress-bar-1 {
+    0% {
+        width: 0%;
+    }
+
+    50% {
+        width: 60%;
+    }
+
+    100% {
+        width: 0%;
+    }
+}
+
+/* this gives the stripes that effect which is basically increasing the background position of the stripes */
+@keyframes progress-bar-after-1 {
+    0% {
+        background-position: 0 100%;
+    }
+
+    100% {
+        background-position: 100px 100%;
+    }
+}
+
+/* styles for the second progress bar container*/
+.animation-bar-2 {
+    position: relative;
+    display: block;
+    font-size: 16px;
+    line-height: 16px;
+    background: rgba(0, 0, 0, 0.1);
+    /* giving it that inset dark/white feel */
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.8);
+    margin-top: 50px;
+}
+
+    /* the style for the plain progress bar */
+    .animation-bar-2 span {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        height: 20px;
+        background-color: #13cc13;
+        background-size: 100%;
+        background-image: linear-gradient(to bottom, #86d876, #13cc13);
+        /* width: 50%; */
+        animation: progress-bar-2 6s infinite ease;
+    }
+
+    /* the little triangle thingy */
+    .animation-bar-2 span::before {
+        position: absolute;
+        right: 0;
+        bottom: 100%;
+        display: inline-block;
+        width: 0;
+        height: 0;
+        border: 10px solid transparent;
+        border-right-width: 0;
+        border-bottom-width: 0;
+        border-top-color: rgba(0, 0, 0, 1);
+        content: "";
+    }
+
+    /* the tooltip itself */
+    .animation-bar-2 span::after {
+        position: absolute;
+        right: 0;
+        bottom: calc(100% + 5px);
+        z-index: 1;
+        display: inline-block;
+        content: attr(data-label); /* a neat way of selecting the attribute name whatever it is */
+        padding: 5px;
+        border-radius: 3px;
+        font-size: 0.8em;
+        background-color: rgba(0, 0, 0, 1);
+        color: #fff;
+    }
+
+    @keyframes progress-bar-2 {
+        0% {
+            width: 0%;
+        }
+
+        100%{
+            width: 100%;
+        }
+    }

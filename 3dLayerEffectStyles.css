@@ -1,0 +1,59 @@
+section {
+    margin: 0 auto;
+    padding: 500px;
+    overflow: hidden;
+}
+
+.layers {
+    position: relative;
+    min-height: 640px;
+    max-width: 360px;
+    /* scaling the svg image to about 1/3rd of it's original height and width */
+}
+
+.layers img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: all ease 1600ms;
+    transform-style: preserve-3d; /* to preserve that 3d plane, because we want it to look 3-dimensional, not like it's skewed */
+}
+
+.layers img.mid {
+    width: 320px;
+    left: 20px; /* it should be perfectly aligned beause the width + 20px on both sides now equal 360 which is our pre-defined max-width */
+}
+
+.layers img.top {
+    width: 300px;
+    left: 30px;
+    top: -5px;
+}
+
+.layers img.tippy-top {
+    width: 280px;
+    left: 40px;
+    top: -150px;
+}
+.layers:hover img {
+    transform: perspective(1200px) rotateX(50deg) rotateY(20deg) rotateZ(-25deg)
+        translateX(35px) translateY(0px) translateZ(180px); /* this is simply like doing positioning but in a 3d space */
+    /* the perspective() property or function enables or creates this 3d space on your screen
+    and produces this illusion of of "distance" between the Z plane and the user.
+    
+    Smaller value = exaggerated effect - like you're closer to the z-element (the back side looks smaller than the front side)
+    Larger value = subtle effect
+  */
+}
+
+.layers:hover img.mid {
+    transform: perspective(1200px) rotateX(50deg) rotateY(20deg) rotateZ(-25deg) translateX(35px) translateY(0px) translateZ(240px);
+}
+
+.layers:hover img.top {
+    transform: perspective(1200px) rotateX(50deg) rotateY(20deg) rotateZ(-25deg) translateX(35px) translateY(0px) translateZ(280px);
+}
+
+.layers:hover img.tippy-top {
+    transform: perspective(1200px) rotateX(50deg) rotateY(20deg) rotateZ(-25deg) translateX(35px) translateY(0px) translateZ(260px);
+}

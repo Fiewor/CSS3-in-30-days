@@ -1,0 +1,41 @@
+.triangle {
+    position: relative;
+    height: 320px; /* the total height of the triangle when it's done */
+    clip-path: polygon(50% 0, 30% 100%, 70% 100%);
+}
+
+.triangle div {
+    position: absolute;
+    background: lightgreen;
+    width: 100%;
+    height: 100px;
+    margin: 0 auto;
+    color: lightgreen;
+    line-height: 100px;
+    text-align: center;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    transition: all ease-in-out 0.6s;
+}
+
+    .top {
+        z-index: 2; /* so top stays in front of mid */
+    }
+
+    .mid {
+        z-index: 1; /* mid stays in front of bottom */
+    }
+
+    .triangle:hover div {
+        color: white;
+    }
+
+    .triangle:hover .mid {
+        background: yellow;
+        top: 110px;
+    }
+
+    .triangle:hover .bottom {
+        background: hotpink;
+        top: 220px;
+    }
